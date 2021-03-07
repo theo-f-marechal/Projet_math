@@ -1,0 +1,51 @@
+==================================== Affichage ==========================================
+Automate numero: 9
+Etat initial: [1]
+Etats terminaux: [0, 1]
+
+               ||a          ||b          |
+S  |0          || 2         ||           |
+ES |1          || 2         ||           |
+   |2          || 3         || 3         |
+   |3          || 4         ||           |
+   |4          || 5         || 5         |
+   |5          || 0         ||           |
+======================= Verification automate synchrone =================================
+L'automate numero 9 est synchrone.
+======================= Verification automate deterministe ===============================
+L'automate numero 9 est deterministe.
+======================= Verification automate complet ===================================
+L'automate numero 9 est incomplet a cause des etats:
+- 0 auquel il manque la transition sur: b
+
+- 1 auquel il manque la transition sur: b
+
+
+- 3 auquel il manque la transition sur: b
+
+
+- 5 auquel il manque la transition sur: b
+
+==================================== Affichage ==========================================
+Automate numero: 9
+Etat initial: [1]
+Etats terminaux: [0, 1]
+
+Correspondance entre les etats de l'automate original et l'automate obtenu:
+Ancien(s) etat(s) => etat actuel
+[0] => 0
+[1] => 1
+[2] => 2
+[3] => 3
+[4] => 4
+[5] => 5
+[6] => 6
+
+               ||a          ||b          |
+S  |0          || 2         || 6         |
+ES |1          || 2         || 6         |
+   |2          || 3         || 3         |
+   |3          || 4         || 6         |
+   |4          || 5         || 5         |
+   |5          || 0         || 6         |
+   |6          || 6         || 6         |

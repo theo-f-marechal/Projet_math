@@ -1,0 +1,126 @@
+==================================== Affichage ==========================================
+Automate numero: 16
+Etat initial: [1]
+Etat terminal: [0]
+
+               ||a          ||b          ||c          ||d          |
+S  |0          ||           ||           ||           ||           |
+E  |1          || 1,2       ||           ||           ||           |
+   |2          ||           || 2,3       ||           ||           |
+   |3          ||           ||           || 3,4       ||           |
+   |4          ||           ||           ||           || 0,4       |
+======================= Verification automate synchrone =================================
+L'automate numero 16 est synchrone.
+======================= Verification automate deterministe ===============================
+L'automate numero 16 est non deterministe a cause des etats:
+- 1
+- 2
+- 3
+- 4
+==================================== Affichage ==========================================
+Automate numero: 16
+Etat initial: [0]
+Etat terminal: [4]
+
+Correspondance entre les etats de l'automate original et l'automate obtenu:
+Ancien(s) etat(s) => etat actuel
+[1] => 0
+[1, 2] => 1
+[2, 3] => 2
+[3, 4] => 3
+[0, 4] => 4
+[5] => 5
+
+               ||a          ||b          ||c          ||d          |
+E  |0          || 1         || 5         || 5         || 5         |
+   |1          || 1         || 2         || 5         || 5         |
+   |2          || 5         || 2         || 3         || 5         |
+   |3          || 5         || 5         || 3         || 4         |
+S  |4          || 5         || 5         || 5         || 4         |
+   |5          || 5         || 5         || 5         || 5         |
+=================================== Minimisation ========================================
+--Etape numero 1:
+Les partitons sont: [4], [0, 1, 2, 3, 5]
+Partition: [4] est un singleton.
+
+Partition: [0, 1, 2, 3, 5]
+                      ||a                    ||b                    ||c                    ||d                    |
+|0                    ||[0, 1, 2, 3, 5]      ||[0, 1, 2, 3, 5]      ||[0, 1, 2, 3, 5]      ||[0, 1, 2, 3, 5]      |
+|1                    ||[0, 1, 2, 3, 5]      ||[0, 1, 2, 3, 5]      ||[0, 1, 2, 3, 5]      ||[0, 1, 2, 3, 5]      |
+|2                    ||[0, 1, 2, 3, 5]      ||[0, 1, 2, 3, 5]      ||[0, 1, 2, 3, 5]      ||[0, 1, 2, 3, 5]      |
+|3                    ||[0, 1, 2, 3, 5]      ||[0, 1, 2, 3, 5]      ||[0, 1, 2, 3, 5]      ||[4]                  |
+|5                    ||[0, 1, 2, 3, 5]      ||[0, 1, 2, 3, 5]      ||[0, 1, 2, 3, 5]      ||[0, 1, 2, 3, 5]      |
+
+On scinde donc la partition: [0, 1, 2, 5], [3]
+
+--Etape numero 2:
+Les partitons sont: [4], [0, 1, 2, 5], [3]
+Partition: [4] est un singleton.
+
+Partition: [0, 1, 2, 5]
+                      ||a                    ||b                    ||c                    ||d                    |
+|0                    ||[0, 1, 2, 5]         ||[0, 1, 2, 5]         ||[0, 1, 2, 5]         ||[0, 1, 2, 5]         |
+|1                    ||[0, 1, 2, 5]         ||[0, 1, 2, 5]         ||[0, 1, 2, 5]         ||[0, 1, 2, 5]         |
+|2                    ||[0, 1, 2, 5]         ||[0, 1, 2, 5]         ||[3]                  ||[0, 1, 2, 5]         |
+|5                    ||[0, 1, 2, 5]         ||[0, 1, 2, 5]         ||[0, 1, 2, 5]         ||[0, 1, 2, 5]         |
+
+On scinde donc la partition: [0, 1, 5], [2]
+
+Partition: [3] est un singleton.
+
+--Etape numero 3:
+Les partitons sont: [4], [0, 1, 5], [2], [3]
+Partition: [4] est un singleton.
+
+Partition: [0, 1, 5]
+                      ||a                    ||b                    ||c                    ||d                    |
+|0                    ||[0, 1, 5]            ||[0, 1, 5]            ||[0, 1, 5]            ||[0, 1, 5]            |
+|1                    ||[0, 1, 5]            ||[2]                  ||[0, 1, 5]            ||[0, 1, 5]            |
+|5                    ||[0, 1, 5]            ||[0, 1, 5]            ||[0, 1, 5]            ||[0, 1, 5]            |
+
+On scinde donc la partition: [0, 5], [1]
+
+Partition: [2] est un singleton.
+
+Partition: [3] est un singleton.
+
+--Etape numero 4:
+Les partitons sont: [4], [0, 5], [1], [2], [3]
+Partition: [4] est un singleton.
+
+Partition: [0, 5]
+                      ||a                    ||b                    ||c                    ||d                    |
+|0                    ||[1]                  ||[0, 5]               ||[0, 5]               ||[0, 5]               |
+|5                    ||[0, 5]               ||[0, 5]               ||[0, 5]               ||[0, 5]               |
+
+On scinde donc la partition: [0], [5]
+
+Partition: [1] est un singleton.
+
+Partition: [2] est un singleton.
+
+Partition: [3] est un singleton.
+
+Toutes les partitions etants des singletons, l'automate est donc minimal.
+--Fin minimisation
+==================================== Affichage ==========================================
+Automate numero: 16
+Etat initial: [1]
+Etat terminal: [0]
+
+Correspondance entre les etats de l'automate original et l'automate obtenu:
+Ancien(s) etat(s) => etat actuel
+[4] => 0
+[0] => 1
+[5] => 2
+[1] => 3
+[2] => 4
+[3] => 5
+
+               ||a          ||b          ||c          ||d          |
+S  |0          || 2         || 2         || 2         || 0         |
+E  |1          || 3         || 2         || 2         || 2         |
+   |2          || 2         || 2         || 2         || 2         |
+   |3          || 3         || 4         || 2         || 2         |
+   |4          || 2         || 4         || 5         || 2         |
+   |5          || 2         || 2         || 5         || 0         |
